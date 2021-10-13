@@ -4,6 +4,8 @@ import me.toto7735.main.commands.MainCommand;
 import me.toto7735.main.spookyWorldGenerate.CustomChunkGenerator;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
+import me.toto7735.main.spookyWorldGenerate.GravestoneStructure;
+import org.bukkit.plugin.PluginManager;
 
 public class SpookyWorld extends JavaPlugin {
 
@@ -13,12 +15,19 @@ public class SpookyWorld extends JavaPlugin {
     public static SpookyWorld getInstance() {
         return instance;
     }
-
+    
+    @Override
     public void onEnable() {
         instance = this;
         new MainCommand();
+        
+        //events
+        PluginManager pm = Bukkit.getPluginManager();
+        pm.registerEvents(new GravestoneStructure(), this);
+        
     }
-
+    
+    @Override
     public void onDisable() {
 
     }
