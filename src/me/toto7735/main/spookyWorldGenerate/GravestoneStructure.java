@@ -13,6 +13,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.world.ChunkLoadEvent;
 import org.bukkit.persistence.PersistentDataType;
+import me.toto7735.main.SpookyWorld;
 
 public class GravestoneStructure implements Listener {
 	
@@ -35,9 +36,9 @@ public class GravestoneStructure implements Listener {
 		l.getBlock().setType(Material.PODZOL);
 		l.subtract(0,1,0).getBlock().setType(Material.CHEST);
 		TileState state = (TileState) l.getBlock().getState();
-		state.getPersistentDataContainer().set(new NamespacedKey(Main.getInstance(), "chesttype" )
+		state.getPersistentDataContainer().set(new NamespacedKey(SpookyWorld.getInstance(), "chesttype" )
 				, PersistentDataType.STRING, "gravestone");
-		state.getPersistentDataContainer().set(new NamespacedKey(Main.getInstance(), "generated" )
+		state.getPersistentDataContainer().set(new NamespacedKey(SpookyWorld.getInstance(), "generated" )
 				, PersistentDataType.STRING, "false");
 		
 		
@@ -110,16 +111,16 @@ public class GravestoneStructure implements Listener {
 		
 		
 		TileState state = (TileState) e.getClickedBlock().getState();
-		if(!state.getPersistentDataContainer().has(new NamespacedKey(Main.getInstance(), "chesttype" )
+		if(!state.getPersistentDataContainer().has(new NamespacedKey(SpookyWorld.getInstance(), "chesttype" )
 				, PersistentDataType.STRING)) return;
-		if(!state.getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "chesttype" )
+		if(!state.getPersistentDataContainer().get(new NamespacedKey(SpookyWorld.getInstance(), "chesttype" )
 				, PersistentDataType.STRING).equalsIgnoreCase("gravestone")) return;
-		if(state.getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "generated" )
+		if(state.getPersistentDataContainer().get(new NamespacedKey(SpookyWorld.getInstance(), "generated" )
 				, PersistentDataType.STRING).equalsIgnoreCase("true")) return;
 		
 		//add loot
 		
-		state.getPersistentDataContainer().set(new NamespacedKey(Main.getInstance(), "generated" )
+		state.getPersistentDataContainer().set(new NamespacedKey(SpookyWorld.getInstance(), "generated" )
 				, PersistentDataType.STRING, "true");
 		
 		
