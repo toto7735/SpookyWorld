@@ -37,6 +37,22 @@ public class MinorEvent {
                 }
                 new SpookySounds(player).playScaryZombieEventStartSound();
             }
+        } else if (this.getEventType().equals(EventType.GHOSTLY_CREEPERS)) {
+            for (Player player : Bukkit.getOnlinePlayers()) {
+                player.sendMessage("§6[HALLOWEEN] §cTHE GHOSTLY CREEPERS APPEARED!");
+                for (int i = 0; i < 5; ++i) {
+                	Entity e = player.getWorld().spawnEntity(player.getLocation().add(0, 5, 0), EntityType.BAT);
+                    Creeper entity = (Creeper) player.getWorld().spawnEntity(player.getLocation().add(0, 5, 0), EntityType.CREEPER);
+                    entity.setCustomName("§7BOO!");
+                    entity.setPowered(true);
+                    e.addPassenger(entity);
+                    ((Mob) e).setTarget(player);
+                    ((CraftEntity)e).getHandle().persistentInvisibility = true;
+                    ((CraftEntity)entity).getHandle().persistentInvisibility = true;
+                    entity.setCanPickupItems(false);
+                }
+                // @toto7735, Make some cool sound if you want ;)
+            }
         }
     }
 
