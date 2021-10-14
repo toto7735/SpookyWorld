@@ -6,12 +6,15 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.block.CreatureSpawner;
 import org.bukkit.block.TileState;
 import org.bukkit.block.data.type.Stairs;
+import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.world.ChunkLoadEvent;
 import org.bukkit.persistence.PersistentDataType;
 import me.toto7735.main.SpookyWorld;
@@ -29,8 +32,6 @@ public class GravestoneStructure implements Listener {
 		if(r.nextInt(125)!=0) return;
 		
 		spawnStructure(e.getChunk().getBlock(6, 6, 6).getLocation());
-		
-		
 	}
 	
 	private void spawnStructure(Location loc) {
@@ -53,8 +54,8 @@ public class GravestoneStructure implements Listener {
 		l.add(0,1,0).getBlock().setType(Material.COBBLESTONE_STAIRS);
 		((Stairs)l.getBlock().getState()).setFacing(loc.clone().add(1,1,0).getBlock().getFace(l.getBlock()));
 		l.add(0,1,0).getBlock().setType(Material.MOSSY_COBBLESTONE_WALL);
-		
-		l = loc.clone().add(-1,0,1);
+		l = loc.clone().
+		add(-1,0,1);
 		l = loc.getWorld().getHighestBlockAt(l).getLocation();
 		//low right
 		l.getBlock().setType(Material.PODZOL);
@@ -87,7 +88,8 @@ public class GravestoneStructure implements Listener {
 		l = loc.getWorld().getHighestBlockAt(l).getLocation();
 		//low
 		l.getBlock().setType(Material.PODZOL);
-		
+		CreatureSpawner spawner = (CreatureSpawner) l.getBlock().getState();
+		spawner.setSpawnedType(EntityType.SKELETON);
 		
 		l = loc.clone().add(0,0,-1);
 		l = loc.getWorld().getHighestBlockAt(l).getLocation();

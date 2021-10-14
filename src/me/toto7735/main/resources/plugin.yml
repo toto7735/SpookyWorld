@@ -3,3 +3,6 @@ version: 1.0.0
 main: me.toto7735.main.SpookyWorld
 author: toto7735, ImTheLion
 description: The spigot plugin of Codedred's jam competition
+api-version: 1.17
+commands:
+  spookyworld:

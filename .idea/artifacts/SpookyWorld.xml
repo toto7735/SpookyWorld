@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SpookyWorld">
+    <output-path>$PROJECT_DIR$/../../../../SpookyWorld 테스트서버/plugins</output-path>
+    <root id="archive" name="SpookyWorld.jar">
+      <element id="module-output" name="SpookyWorld" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/me/toto7735/main/resources/plugin.yml" />
+    </root>
+  </artifact>
+</component>
