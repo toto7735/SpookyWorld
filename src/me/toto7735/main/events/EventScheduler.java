@@ -15,18 +15,17 @@ public class EventScheduler {
     private void run() {
         new BukkitRunnable() {
             public void run() {
+                if (Bukkit.getOnlinePlayers().isEmpty() || Event.isEventRunning()) return;
                 boolean major = new Random().nextInt(5) == 0;
                 if (!major) {
                     EventType eventType = null;
                     do {
                         eventType = EventType.values()[new Random().nextInt(EventType.values().length)];
-                        System.out.println(eventType.isMajor);
-                        System.out.println(Event.isEventRunning(eventType));
-                    } while (eventType.isMajor || Event.isEventRunning(eventType));
+                    } while (eventType.isMajor);
                     new MinorEvent(eventType).fire();
                 }
             }
-        }.runTaskTimer(SpookyWorld.getInstance(), 0, 100); // We can't use Asynchronously because of entity add; by toto7735
+        }.runTaskTimer(SpookyWorld.getInstance(), 0, 6000); // We can't use Asynchronously because of entity add; runs every 5 minutes; by toto7735
     }
 
 }

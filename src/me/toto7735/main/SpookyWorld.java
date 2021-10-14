@@ -1,6 +1,7 @@
 package me.toto7735.main;
 
 import me.toto7735.main.commands.MainCommand;
+import me.toto7735.main.events.EventListener;
 import me.toto7735.main.events.EventScheduler;
 import me.toto7735.main.packetListener.PacketListener;
 import me.toto7735.main.spookyWorldGenerate.CustomChunkGenerator;
@@ -26,6 +27,7 @@ public class SpookyWorld extends JavaPlugin {
         new GravestoneStructure();
         new PacketListener();
         new EventScheduler();
+        new EventListener();
     }
     
     @Override

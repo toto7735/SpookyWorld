@@ -21,7 +21,7 @@ public class MinorEvent {
     }
 
     public void fire() {
-        //Event.fireEvent(this.getEventType());
+        // Don't do Event.fireEvent(); by toto7735
         if (this.getEventType().equals(EventType.SCARY_ZOMBIES)) {
             for (Player player : Bukkit.getOnlinePlayers()) {
                 player.sendMessage("§6[HALLOWEEN] §cTHE TREAT OR TRICK ZOMBIES APPEARED!");

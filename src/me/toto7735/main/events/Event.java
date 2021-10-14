@@ -1,22 +1,19 @@
 package me.toto7735.main.events;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Event {
 
-    private static List<EventType> runningEvents = new ArrayList<>();
+    private static boolean isRunning;
 
-    public static boolean isEventRunning(EventType eventType) {
-        return runningEvents.contains(eventType);
+    public static boolean isEventRunning() {
+        return isRunning;
     }
 
-    public static void fireEvent(EventType eventType) {
-        runningEvents.add(eventType);
+    public static void fireEvent() {
+        isRunning = true;
     }
 
-    public static void stopEvent(EventType eventType) {
-        runningEvents.remove(eventType);
+    public static void stopEvent() {
+        isRunning = false;
     }
 
 }
