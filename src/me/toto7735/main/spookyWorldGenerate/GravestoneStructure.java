@@ -1,7 +1,8 @@
-package spookyworld;
+package me.toto7735.main.spookyWorldGenerate;
 
 import java.util.Random;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -16,8 +17,11 @@ import org.bukkit.persistence.PersistentDataType;
 import me.toto7735.main.SpookyWorld;
 
 public class GravestoneStructure implements Listener {
-	
-	
+
+	public GravestoneStructure() {
+		Bukkit.getPluginManager().registerEvents(this, SpookyWorld.getInstance());
+	}
+
 	@EventHandler
 	public void onLoad(ChunkLoadEvent e) {
 		if(!e.isNewChunk()) return;
