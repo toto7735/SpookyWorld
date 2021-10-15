@@ -5,18 +5,14 @@ import java.util.Random;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
+import org.bukkit.block.Block;
 import org.bukkit.block.CreatureSpawner;
-import org.bukkit.block.TileState;
 import org.bukkit.block.data.type.Stairs;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.world.ChunkLoadEvent;
-import org.bukkit.persistence.PersistentDataType;
+
 import me.toto7735.main.SpookyWorld;
 
 public class GravestoneStructure implements Listener {
