@@ -1,4 +1,4 @@
-package spookyworld.jumpscares;
+package me.toto7735.jumpscares;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -25,7 +25,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.EntityPlayer;
 import net.minecraft.server.level.WorldServer;
 import net.minecraft.server.network.PlayerConnection;
-import spookyworld.SpookyWorld;
+import me.toto7735.main.SpookyWorld;
 
 public class JumpScare {
 	
