@@ -1,12 +1,12 @@
-package spookyworld.jumpscares;
+package me.toto7735.main.jumpscares;
 
 import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import spookyworld.SpookyWorld;
-import spookyworld.jumpscares.JumpScare.JumpscareType;
+import me.toto7735.main.SpookyWorld;
+import me.toto7735.main.jumpscares.JumpScare.JumpscareType;
 
 public class ScareHandler {
 	
