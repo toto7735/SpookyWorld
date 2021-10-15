@@ -7,6 +7,7 @@ import me.toto7735.main.packetListener.PacketListener;
 import me.toto7735.main.spookyWorldGenerate.CustomChunkGenerator;
 import me.toto7735.main.spookyWorldGenerate.GravestoneStructure;
 import me.toto7735.main.listeners.SpawnListener;
+import me.toto7735.main.jumpscares.ScareHandler;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -30,6 +31,7 @@ public class SpookyWorld extends JavaPlugin {
         new EventScheduler();
         new EventListener();
         new SpawnListener();
+        new ScareHandler();
     }
     
     @Override
